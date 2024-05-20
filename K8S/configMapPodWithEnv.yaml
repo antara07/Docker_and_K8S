@@ -1,0 +1,30 @@
+apiVersion : v1
+kind : Pod
+metadata : 
+  name : config-env-pod
+  labels : 
+    app : my-env-config-pod
+
+spec : 
+  containers : 
+    - name : config-env-pod
+      image : vishymails/tomcatimage:1.0
+      env :
+        - name : DB_HOST_NAME
+          valueFrom :
+            configMapKeyRef :
+              name : myconfig
+              key : db_host_name
+
+        - name : SERVICE_DETAILS
+          valueFrom :
+            configMapKeyRef :
+              name : myconfig
+              key : service_details   
+
+        - name : CSS_DETAILS
+          valueFrom :
+            configMapKeyRef :
+              name : myconfig
+              key : css_properties                
+                

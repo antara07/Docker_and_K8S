@@ -1,0 +1,11 @@
+apiVersion : v1
+kind : Pod
+metadata : 
+  name : tomacat-pod
+  labels : 
+    app : tomcat
+    tier : dev
+spec : 
+  containers : 
+    - name : tomcat-container
+      image : vishymails/tomcatimage:1.0

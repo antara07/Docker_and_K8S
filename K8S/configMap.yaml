@@ -1,0 +1,16 @@
+apiVersion : v1
+kind : ConfigMap
+metadata :
+  name : myconfig
+
+data :
+  db_host_name : "oracledb"
+  properties_file_name : "application-dev.yaml"
+  service_details : |
+    services=addmission-service,pathalogy_service
+    rating=5
+
+  css_properties : |
+    color=red
+    background=yellow
+    text-color=black
